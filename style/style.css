@@ -1,12 +1,15 @@
 
 body{
-    background-image: linear-gradient(rgb(82, 192, 255) , rgb(255, 121, 255));
+    background-image: linear-gradient(rgb(71, 187, 255) , rgb(255, 149, 255));
     height: 100%;
 }
 
 .overflow-mine{
     overflow-y: scroll;
 }
+.overflow-mine::-webkit-scrollbar {
+    display: none;
+  }
 .hover{
     cursor: pointer;
 }

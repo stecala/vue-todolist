@@ -27,13 +27,13 @@
         <div class="input-group mb-3 width-mine mx-auto">
             <input type="text" class="form-control" placeholder="Aggiungi un To Do" aria-label="Recipient's username"
                 aria-describedby="button-addon2" v-model.trim="newToDo" @keyUp.enter="addingToDo(newToDo)">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+            <button class="btn btn-danger text-white"  type="button" id="button-addon2"
                 @click="addingToDo(newToDo)">Button</button>
         </div>
         <div class="spacer overflow-mine">
             <div class="container bg-mine rounded rounded-4 py-3 px-5 width-mine ">
                 <div class="row py-1 d-flex justify-content-between fw-bold " v-for="( element , index ) in todos">
-                    <div class="col-8 col-md-6 bg-success text-white rounded rounded-4 hover"
+                    <div class="col-8 col-md-6 bg-primary text-white rounded rounded-4 hover"
                         :class="{'text-decoration-line-through bg-danger text-opacity-50' : element.done === true }"
                         @click="changeStatusOnClick(index)">
                         {{element.text}}
@@ -45,9 +45,9 @@
                 </div>
             </div>
         </div>
-        <footer class="d-flex justify-content-center align-items-center my-5 fw-bold">
-            <div class="foot-txt">Created by Stefano 🐸</div>
-            <a class="btn btn-warning`" @click="reset()">Reset</a>
+        <footer class="d-flex justify-content-center align-items-center my-5 fw-bold flex-column">
+            <div class="foot-txt my-2">Created by Stefano 🐸</div>
+            <div><a class="btn btn-warning" @click="reset()">Reset</a></div>
         </footer>
     </div>
     
