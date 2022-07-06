@@ -21,17 +21,17 @@
 
 <body>
     <div id="app">
-        <h1 class="text-center fw-bold text-white">To do List</h1>
+        <h1 class="text-center fw-bold text-white my-5">To do List</h1>
         <div class="spacer">
-            <div class="container bg-light rounded rounded-4 py-3 px-5 width-mine">
-                <div class="row py-1 d-flex justify-content-between " v-for="( element , index ) in todos">
+            <div class="container bg-mine rounded rounded-4 py-3 px-5 width-mine">
+                <div class="row py-1 d-flex justify-content-between fw-bold" v-for="( element , index ) in todos">
                     <div class="col-8 col-md-6 bg-success text-white rounded rounded-4 hover"
                         :class="{'text-decoration-line-through bg-danger text-opacity-50' : element.done === true }"
                         @click="changeStatusOnClick(index)">
                         {{element.text}}
                     </div>
                     <div class="col-1 align-items-center d-flex justify-content-end hover"
-                        @click="deleteElement(index)">
+                        @click="deleteElement(index)" :class="{ shake: element.done }">
                         <i class="fa-solid fa-trash"></i>
                     </div>
                 </div>
