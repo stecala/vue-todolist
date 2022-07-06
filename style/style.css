@@ -10,3 +10,12 @@ body{
 .hover{
     cursor: pointer;
 }
+footer{
+    height: 3vh;
+}
+.width-mine{
+    max-width: 40%;
+}
+.spacer{
+    height: 85vh;
+}

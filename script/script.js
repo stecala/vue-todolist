@@ -24,6 +24,9 @@ const app = new Vue({
     methods : {
         deleteElement (indexToDelete){
             this.todos.splice( indexToDelete, 1 );
+        },
+        changeStatusOnClick(indexToChange){
+            this.todos[indexToChange].done = !this.todos[indexToChange].done;
         }
     },
 
