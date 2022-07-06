@@ -16,10 +16,15 @@
 </head>
 <body>
     <div id="app">
-        <div class="container-md bg-light rounded rounded-4 py-3 px-5">
-            <div class="row py-1" v-for="( element , index ) in todos">
-                <div class="col-10 bg-success text-white rounded rounded-4 my-0 mx-auto" :class="{'text-decoration-line-through bg-danger text-opacity-50' : element.done === true }">
+        <h1 class="text-center fw-bold text-white">To do List</h1>
+        <div class="container-md bg-light rounded rounded-4 py-3 px-5 w-50">
+            <div class="row py-1 d-flex justify-content-between " v-for="( element , index ) in todos">
+                <div class="col-9 col-md-6 bg-success text-white rounded rounded-4 hover" 
+                    :class="{'text-decoration-line-through bg-danger text-opacity-50' : element.done === true }">
                     {{element.text}}
+                </div>
+                <div class="col-1 align-items-center d-flex justify-content-end hover" @click="deleteElement(index)">
+                    <i class="fa-solid fa-trash"></i>
                 </div>
             </div>
         </div>

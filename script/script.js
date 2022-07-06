@@ -22,7 +22,9 @@ const app = new Vue({
 
     },
     methods : {
-
+        deleteElement (indexToDelete){
+            this.todos.splice( indexToDelete, 1 );
+        }
     },
 
 })
