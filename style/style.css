@@ -4,8 +4,8 @@ body{
     height: 100%;
 }
 
-#app{
-    overflow-y:hidden
+.overflow-mine{
+    overflow-y: scroll;
 }
 .hover{
     cursor: pointer;
@@ -17,7 +17,7 @@ footer{
     max-width: 40%;
 }
 .spacer{
-    height: 75vh;
+    height: 66.4vh;
 }
 .bg-mine{
     background-color: rgb(247, 247, 247);

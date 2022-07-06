@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -16,31 +18,39 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- My style -->
     <link rel="stylesheet" href="./style/style.css">
-    <title>Document</title>
+    <title>ToDo</title>
 </head>
 
 <body>
     <div id="app">
-        <h1 class="text-center fw-bold text-white my-5">To do List</h1>
-        <div class="spacer">
-            <div class="container bg-mine rounded rounded-4 py-3 px-5 width-mine">
-                <div class="row py-1 d-flex justify-content-between fw-bold" v-for="( element , index ) in todos">
+        <h1 class="text-center fw-bold text-white my-5">To Do List</h1>
+        <div class="input-group mb-3 width-mine mx-auto">
+            <input type="text" class="form-control" placeholder="Aggiungi un To Do" aria-label="Recipient's username"
+                aria-describedby="button-addon2" v-model.trim="newToDo" @keyUp.enter="addingToDo(newToDo)">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                @click="addingToDo(newToDo)">Button</button>
+        </div>
+        <div class="spacer overflow-mine">
+            <div class="container bg-mine rounded rounded-4 py-3 px-5 width-mine ">
+                <div class="row py-1 d-flex justify-content-between fw-bold " v-for="( element , index ) in todos">
                     <div class="col-8 col-md-6 bg-success text-white rounded rounded-4 hover"
                         :class="{'text-decoration-line-through bg-danger text-opacity-50' : element.done === true }"
                         @click="changeStatusOnClick(index)">
                         {{element.text}}
                     </div>
-                    <div class="col-1 align-items-center d-flex justify-content-end hover"
-                        @click="deleteElement(index)" :class="{ shake: element.done }">
+                    <div class="col-1 align-items-center d-flex justify-content-end hover" @click="deleteElement(index)"
+                        :class="{ shake: element.done }">
                         <i class="fa-solid fa-trash"></i>
                     </div>
                 </div>
             </div>
         </div>
+        <footer class="d-flex justify-content-center align-items-center my-5 fw-bold">
+            <div class="foot-txt">Created by Stefano 🐸</div>
+            <a class="btn btn-warning`" @click="reset()">Reset</a>
+        </footer>
     </div>
-    <footer class="d-flex justify-content-center align-items-center my-5 fw-bold">
-        <div class="foot-txt">Created by Stefano 🐸</div>
-    </footer>
+    
     <!-- Import script -->
     <script src="./script/script.js"></script>
 </body>
