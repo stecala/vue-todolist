@@ -13,6 +13,10 @@ const app = new Vue({
             {
                 text: 'Fare il bucato',
                 done: false
+            },
+            {
+                text: 'Fare jogging',
+                done: true
             }
         ],
 

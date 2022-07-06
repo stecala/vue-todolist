@@ -16,9 +16,9 @@
 </head>
 <body>
     <div id="app">
-        <div class="container-md bg-light rounded rounded-4">
-            <div class="row p-3" v-for="( element , index ) in todos">
-                <div class="col-8 ">
+        <div class="container-md bg-light rounded rounded-4 py-3 px-5">
+            <div class="row py-1" v-for="( element , index ) in todos">
+                <div class="col-10 bg-success text-white rounded rounded-4 my-0 mx-auto" :class="{'text-decoration-line-through bg-danger text-opacity-50' : element.done === true }">
                     {{element.text}}
                 </div>
             </div>
